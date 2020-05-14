@@ -50,6 +50,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -88,7 +89,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "retina:build"
+            "browserTarget": "retina:build",
+            "host": "0.0.0.0",
+            "port": 4567
           },
           "configurations": {
             "production": {
@@ -114,6 +117,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -145,6 +149,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "retina"
+    }
+  },
+  "defaultProject": "retina",
+  "cli": {
+    "analytics": "69126ec4-9aa2-480b-b359-62411eca58b9"
+  }
 }
