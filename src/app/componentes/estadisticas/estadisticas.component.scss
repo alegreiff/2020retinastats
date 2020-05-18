@@ -1,0 +1,10 @@
+@import "~src/variables.scss";
+.grafica{
+  background: $color-gris;
+
+    margin: 0 auto 6em auto;
+    max-height: 422px;
+    padding: 2em;
+    border: 1px red dashed;
+    border-radius: 0.5897em;
+}

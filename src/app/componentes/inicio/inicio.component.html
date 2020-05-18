@@ -1,0 +1,14 @@
+<div class="spinner">
+  <mat-spinner *ngIf="isLoading$ | async" color="primary" diameter="333"></mat-spinner>
+</div>
+
+
+<div *ngIf="!(isLoading$ | async)">
+  <p *ngIf="paises$ | async">GEO PAÍSES {{ (paises$ | async).length }}</p>
+  <p *ngIf="fechas$ | async">FECHAS:  {{ (fechas$ | async).length }}</p>
+  <p *ngIf="peliculas$ | async">PELÍCULAS:  {{ (peliculas$ | async).length }}</p>
+  <p *ngIf="estadisticas$ | async">ESTADÍSTICAS {{ (estadisticas$ | async).length }}</p>
+  <p *ngIf="eventos$ | async">EVENTOS: {{ (eventos$ | async).length }}</p>
+</div>
+
+

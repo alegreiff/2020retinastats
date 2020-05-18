@@ -1,0 +1,34 @@
+<p>estadisticas works!</p>
+
+<pre *ngIf="estadisticas$">
+    {{ (estadisticas$ | async).length  }}
+</pre>
+
+<div class="grafica">
+    <ngx-charts-bar-vertical-2d
+    [scheme]="colorScheme"
+    [results]="datosbase"
+    [roundDomains]="true"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [legendTitle]="legendTitle"
+    legendPosition="below"
+    barPadding=1
+    groupPadding=2>
+  </ngx-charts-bar-vertical-2d>
+</div>
+
+<mat-button-toggle-group #graficaTipo="matButtonToggleGroup" value="sesiones">
+  <mat-button-toggle value="sesiones" (click)="buttongroup()">Sesiones</mat-button-toggle>
+  <mat-button-toggle value="usuarios_wp" (click)="buttongroup()">Usuarios WP</mat-button-toggle>
+  <mat-button-toggle value="kaltura" (click)="buttongroup()">Kaltura</mat-button-toggle>
+  <mat-button-toggle value="duracion_media" (click)="buttongroup()">Duración media</mat-button-toggle>
+  <mat-button-toggle value="visitas_paginas" (click)="buttongroup()">Página</mat-button-toggle>
+
+</mat-button-toggle-group>

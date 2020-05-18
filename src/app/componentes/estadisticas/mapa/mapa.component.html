@@ -1,0 +1,18 @@
+<button mat-button color="primary" (click)="cambiaDatos(1, 2020)">Enero 2020</button>
+<button mat-button color="primary" (click)="cambiaDatos(2, 2020)">Febrero 2020</button>
+<google-chart type="GeoChart" [data]="datamapa | async" [options]="options"></google-chart>
+
+<mat-form-field>
+  <mat-label>Month and Year</mat-label>
+  <input matInput [matDatepicker]="dp" [formControl]="date"  [min]="minDate" [max]="maxDate">
+  <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+  <mat-datepicker #dp
+                  startView="multi-year"
+                  (yearSelected)="chosenYearHandler($event)"
+                  (monthSelected)="chosenMonthHandler($event, dp)"
+                  panelClass="example-month-picker">
+  </mat-datepicker>
+</mat-form-field>
+ <div>
+   {{ (datamapa | async) | json }}
+ </div>

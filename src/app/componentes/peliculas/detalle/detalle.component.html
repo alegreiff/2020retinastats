@@ -1,0 +1,41 @@
+<a routerLink="/peliculas">ver todas las películas</a>
+<div class="contenedorseccion">
+  <mat-chip-list aria-label="datos breves" *ngFor="let tempo of (peliculaActiva$ | async).temporadas">
+    <mat-chip color="primary" selected>{{ tempo.entrada }}</mat-chip>
+    <mat-chip color="accent" selected >{{ tempo.diasalaire  | number:'':'es' }} días</mat-chip>
+    <mat-chip color="warn" selected *ngIf="tempo.salida; else PeliActiva">{{ tempo.salida }}</mat-chip>
+    <ng-template #PeliActiva><mat-chip color="primary" selected>Activa {{ endOfMonth }} </mat-chip>  </ng-template>
+  </mat-chip-list>
+  <mat-tab-group>
+    <mat-tab label="Stadts">
+      <button mat-raised-button color="primary"  (click)="mes()" *ngIf="botonactivo=='year'">Ver por mes</button>
+      <button mat-raised-button color="primary" (click)="year()" *ngIf="botonactivo=='mes'">Ver por año</button>
+      <div class="grafico">
+        <ngx-charts-bar-vertical *ngIf="datosGrafica" [legend]="legend" [scheme]="colorScheme"
+                    [results]="datosGrafica" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis"
+                    [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel" >
+                </ngx-charts-bar-vertical>
+      </div>
+      <p *ngIf="testData">{{ testData | json }} </p>
+
+    </mat-tab>
+    <mat-tab label="Second">
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip>One fish</mat-chip>
+        <mat-chip>Two fish</mat-chip>
+        <mat-chip color="primary" selected>Primary fish</mat-chip>
+        <mat-chip color="accent" selected>Accent fish</mat-chip>
+      </mat-chip-list>
+    </mat-tab>
+    <mat-tab label="Third"> <pre>
+      {{ (peliculaActiva$ | async) | json }}
+    </pre> </mat-tab>
+  </mat-tab-group>
+</div>
+
+
+
+
+
+

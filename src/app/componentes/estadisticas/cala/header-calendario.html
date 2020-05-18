@@ -1,0 +1,54 @@
+<button
+mat-stroked-button color="primary"
+  mwlCalendarPreviousView
+  [view]="view"
+  [(viewDate)]="viewDate"
+  (viewDateChange)="viewDateChange.next(viewDate)"
+  [disabled]="minDate >= viewDate "
+>
+  Anterior
+</button>
+
+<button
+mat-stroked-button color="primary"
+  mwlCalendarToday
+  [(viewDate)]="viewDate"
+  (viewDateChange)="viewDateChange.next(viewDate)"
+>
+  Hoy
+</button>
+<button
+mat-stroked-button color="primary"
+  mwlCalendarNextView
+  [view]="view"
+  [(viewDate)]="viewDate"
+  (viewDateChange)="viewDateChange.next(viewDate)"
+  [disabled]="viewDate >= maxDate"
+>
+  Siguiente
+</button>
+
+<span>{{ viewDate | calendarDate: view + 'ViewTitle':'Es' }}</span>
+
+<button
+mat-stroked-button color="primary"
+  (click)="viewChange.emit('month')"
+  [class.active]="view === 'month'"
+>
+  Mes
+</button>
+
+<button
+mat-stroked-button color="primary"
+  (click)="viewChange.emit('week')"
+  [class.active]="view === 'week'"
+>
+  Semana
+</button>
+<button
+mat-stroked-button color="primary"
+  (click)="viewChange.emit('day')"
+  [class.active]="view === 'day'"
+>
+  Día
+</button>

@@ -1,0 +1,27 @@
+.contenedorseccion{
+  width: 90%;
+  margin: 1em auto 0;
+}
+
+div.grafico{
+  display: grid;
+  width: 92%;
+  margin: 0 auto;
+  height: 450px;
+  padding: 5px;
+  border: 1px rgb(125, 175, 233) dashed;
+  border-radius: 0.5897em;
+}
+
+.verdec{
+  border: green;
+  background: lighten(green, 50%) !important;
+}
+.azulc{
+  border: blue;
+  background: lighten(blue, 50%) !important;
+}
+.rojac{
+  border: red;
+  background: lighten(red, 50%) !important;
+}

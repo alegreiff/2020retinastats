@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs><button mat-icon-button (click)="onToggleSidenav()">
+          <mat-icon class="mat-18">menu</mat-icon>
+      </button>
+  </div>
+  <div><a routerLink="/">Retina Latina</a></div>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/mapa">Mapa</button>
+  <button mat-menu-item routerLink="/peliculas">Películas</button>
+  <button mat-menu-item routerLink="/cala">Calendario TEST</button>
+</mat-menu>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+      <ul fxLayoutGap="1em" fxLayout class="navigation-items">
+        <li><a routerLinkActive="is-active" routerLink="/" [routerLinkActiveOptions]="{exact: true}" *ngIf="isLogged$ | async">Inicio</a></li>
+        <li><a routerLinkActive="is-active" routerLink="/peliculas" *ngIf="isLogged$ | async">Películas</a></li>
+        <li><a routerLinkActive="is-active" routerLink="/estadisticas" *ngIf="isLogged$ | async">Estadísticas</a></li>
+        <li><a routerLinkActive="is-active" routerLink="/acceder" *ngIf="!(isLogged$ | async)">Login</a></li>
+
+        <li><a (click)="logout()" *ngIf="isLogged$ | async">Logout</a></li>
+
+
+          <!-- <li><a routerLink="/signup">Signup</a></li>
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="/training">Training</a></li> -->
+          <!-- <li><a style="cursor: pointer" (click)="onLogout()">Logout</a></li> -->
+      </ul>
+
+  </div>
+</mat-toolbar>

@@ -1,19 +1,14 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
-      <!-- <app-sidenav-list (cierraMenuLateral)="sidenav.close()"></app-sidenav-list> -->
       <rl-menu-lateral (cierraMenuLateral)="sidenav.close()"></rl-menu-lateral>
 
   </mat-sidenav>
   <mat-sidenav-content>
-      <!-- <app-header (sidenavToggle)="sidenav.toggle()"></app-header> -->
       <rl-header (sidenavToggle)="sidenav.toggle()"></rl-header>
 
       <main>
           <router-outlet></router-outlet>
       </main>
-      <footer fxLayout="row">
-        <div>2020</div>
-        <div>Retina</div>
-      </footer>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

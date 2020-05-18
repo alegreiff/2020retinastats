@@ -1,0 +1,21 @@
+@import "~src/variables.scss";
+mat-table{
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+mat-cell{
+  color: grey;
+}
+
+div.spinner{
+  padding-top: 2em;
+}
+mat-spinner{
+
+  margin: 0 auto;
+}
+.clean{
+  display: none;;
+}
